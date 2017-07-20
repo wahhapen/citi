@@ -1,0 +1,11 @@
+@import "../header/header";
+@import "../footer/footer";
+@import "../main-content/main-content";
+
+@define-mixin page {
+  .page {
+    @mixin header;
+    @mixin main-content;
+    @mixin footer;
+  }
+}

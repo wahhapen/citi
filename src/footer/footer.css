@@ -1,0 +1,16 @@
+@define-mixin footer {
+  .basement {
+    @mixin wrapper;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    display: block;
+    background-color: #ebedec;
+    box-sizing: border-box;
+    .copycat {
+      margin: 0;
+      font-size: 12px;
+      color: #bbb;
+      cursor: default;
+    }
+  }
+}

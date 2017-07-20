@@ -1,0 +1,6 @@
+@define-mixin header {
+  .attic {
+    @mixin wrapper;
+    display: block;
+  }
+}

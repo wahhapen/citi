@@ -1,0 +1,16 @@
+@define-mixin base {
+  :root {
+    --wrapper: {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    @custom-media --phone (width <= 544px);
+    @custom-media --device (width <= 992px);
+    @custom-media --large-desktop (width >= 1279px);
+    @custom-media --desktop (width >= 992px);
+
+  }
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+}
