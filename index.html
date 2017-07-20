@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,17 +17,107 @@
   <meta name="msapplication-config" content="favicon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 </head>
+
 <body>
   <div class="page">
     <header class="attic">
       <h1 class="attic__title">Banner header</h1>
+      <p class="attic__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud</p>
+      <div class="request">
+        <h2 class="request__title">Request form</h2>
+        <label for="email" class="request-item mail">
+          <span class="request-item__text">Enter your E-Mail</span>
+          <input id="email" type="text" class="request-item__input">
+          <span class="request-item__error">Enter correct E-mail</span>
+        </label>
+        <label for="name" class="request-item name">
+          <span class="request-item__text">Enter your Name</span>
+          <input id="name" type="text" class="request-item__input">
+          <span class="request-item__error">Enter correct Name</span>
+        </label>
+        <label for="country" class="request-item country">
+          <select id="country" type="text" class="request-item__select">
+            <option value="" disabled selected hidden>Select your country</option>
+            <option value="Russia">Russia</option>
+            <option value="USA">USA</option>
+            <option value="Denmark">Denmark</option>
+          </select>
+          <span class="request-item__error">Please choose country</span>
+        </label>
+        <label for="terms" class="request-terms">
+          <input id="terms" type="checkbox" class="request-terms__input">
+          <span class="request-terms__text">I agree<a href="#" class="request-terms__link">Terms & Conditions</a></span>
+        </label>
+        <button class="request__submit" type="submit">Submit</button>
+        <a href="#" class="request__link">Hyperlink</a>
+      </div>
     </header>
     <main class="content">
-      <h2 class="content__title">Title text</h2>
+      <section class="posts">
+        <ul class="posts__list">
+          <li class="posts-item">
+            <h3 class="posts-item__title">Post header 1</h3>
+            <p class="posts-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.
+            </p>
+            <a href="#" class="posts-item__more"></a>
+          </li>
+          <li class="posts-item">
+            <h3 class="posts-item__title">Post header 2</h3>
+            <p class="posts-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.
+            </p>
+            <a href="#" class="posts-item__more"></a>
+          </li>
+          <li class="posts-item">
+            <h3 class="posts-item__title">Post header 3</h3>
+            <p class="posts-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.
+            </p>
+            <a href="#" class="posts-item__more"></a>
+          </li>
+          <li class="posts-item">
+            <h3 class="posts-item__title">Post header 4</h3>
+            <p class="posts-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.
+            </p>
+            <a href="#" class="posts-item__more"></a>
+          </li>
+          <li class="posts-item">
+            <h3 class="posts-item__title">Post header 5</h3>
+            <p class="posts-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.
+            </p>
+            <a href="#" class="posts-item__more"></a>
+          </li>
+        </ul>
+      </section>
+      <h2 class="ordered__title">Title text</h2>
+      <section class="ordered">
+        <ol class="ordered__list">
+          <li class="ordered-item">Duis aute irure dolor in reprehenderit<sup>1</sup> in voluptate velit</li>
+          <li class="ordered-item">Ullamco laboris nisi ut aliquip ex ea commodo consequat </li>
+          <li class="ordered-item">Ut enim ad minim veniam, quis nostrud exercitation </li>
+          <li class="ordered-item">Et dolore magna aliqua</li>
+          <li class="ordered-item">Sed do eiusmod tempor<sup>2</sup> incididunt ut labore</li>
+          <li class="ordered-item">Lorem ipsum dolor sit amet<sup>3</sup> consectetur adipisicing elit</li>
+        </ol>
+      </section>
     </main>
     <footer class="basement">
-      <p class="basement__text">Some text</p>
+      <ol class="basement__list">
+        <li class="basement-item">Reprehenderit - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</li>
+        <li class="basement-item">Tempor - Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+        <li class="basement-item">Amet - Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+      </ol>
     </footer>
   </div>
 </body>
+
 </html>
