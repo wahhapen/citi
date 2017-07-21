@@ -1,0 +1,61 @@
+@define-mixin request-terms {
+  .request-terms {
+    margin-bottom: 15px;
+    position: relative;
+    display: block;
+    &__input {
+      height: 0;
+      position: absolute;
+      visibility: hidden;
+      &:checked {
+        & + .request-terms__text {
+          &:before {
+            background-color: #48b;
+          }
+          &:after {
+            position: absolute;
+            left: 3px;
+            top: 2px;
+            width: 10px;
+            height: 6px;
+            border-bottom: 2px solid #fff;
+            border-left: 2px solid #fff;
+            transform: rotate(-45deg);
+            content: '';
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    &__text {
+      position: relative;
+      padding-left: 25px;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 16px;
+      color: #aaa;
+      &:before {
+        margin-top: -3px;
+        margin-left: -25px;
+        margin-right: 8px;
+        content: '';
+        height: 18px;
+        width: 18px;
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #eee;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    }
+    &__link {
+      display: inline-block;
+      vertical-align: baseline;
+      color: #aaa;
+      text-decoration: none;
+      &:hover {
+        color: #b44;
+      }
+    }
+  }
+}

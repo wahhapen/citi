@@ -1,6 +1,7 @@
 @import "../header/header";
 @import "../footer/footer";
 @import "../main-content/main-content";
+@import "../modal/modal";
 
 @define-mixin page {
   .page {
@@ -8,4 +9,5 @@
     @mixin main-content;
     @mixin footer;
   }
+  @mixin modal;
 }

@@ -1,0 +1,81 @@
+@import '../submit/submit';
+@import '../link/link';
+
+@define-mixin modal {
+  .overlay {
+    display: none;
+    padding: 10px;
+    background-color: rgba(51, 51, 51, 0.74);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 180;
+    overflow: hidden;
+    &.shown {
+      display: block;
+    }
+  }
+  .modal {
+    padding: 20px 10px 50px;
+    position: relative;
+    top: 30%;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: .5s all ease-in;
+    &__title {
+      margin: 0;
+      font-size: 24px;
+    }
+    &__text {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      font-size: 16px;
+      color: #333;
+    }
+    &__btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @mixin link;
+      @mixin submit;
+    }
+    &__cancel {
+      margin-right: 35px;
+    }
+    &__close {
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      border: 2px solid #333333;
+      cursor: pointer;
+      &:before,
+      &:after {
+        top: 50%;
+        left: 50%;
+        margin-top: -1px;
+        margin-left: -9px;
+        height: 2px;
+        width: 18px;
+        background-color: #333;
+        position: absolute;
+        content: '';
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+      &:hover {
+        border-color: #b44;
+        &:after,
+        &:before {
+          background-color: #b44;
+        }
+      }
+    }
+  }
+}

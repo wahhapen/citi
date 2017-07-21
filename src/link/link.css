@@ -1,0 +1,10 @@
+@define-mixin link {
+  .link {
+    color: #aaa;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      color: #b44;
+    }
+  }
+}

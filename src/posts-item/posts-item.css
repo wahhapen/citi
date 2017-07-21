@@ -1,0 +1,67 @@
+@define-mixin posts-item {
+  .posts-item {
+    position: absolute;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 14px;
+    position: relative;
+    background-color: rgba(68, 136, 187, 0.749);
+    color: #fff;
+    &:last-of-type {
+      margin-bottom: 0;
+      &:after {
+        position: absolute;
+        bottom: 0;
+        left: -10px;
+        content: '';
+        width: calc(100% + 20px);
+        height: 95px;
+        background-color: #eee;
+        z-index: -2;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-size: cover;
+    }
+    &__title {
+      margin: 0;
+      font-size: 24px;
+    }
+    &__text {
+      line-height: 18px;
+      font-size: 14px;
+    }
+    &__more {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      height: 18px;
+      width: 18px;
+      background-image: url('../images/open.png');
+    }
+    &:nth-of-type(1):before {
+      background-image: url('../images/post-1.jpg');
+    }
+    &:nth-of-type(2):before {
+      background-image: url('../images/post-2.jpg');
+    }
+    &:nth-of-type(3):before {
+      background-image: url('../images/post-3.jpg');
+    }
+    &:nth-of-type(4):before {
+      background-image: url('../images/post-4.jpg');
+    }
+    &:nth-of-type(5):before {
+      background-image: url('../images/post-5.jpg');
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@define-mixin request-item {
+  .request-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+    width: 100%;
+    &__input,
+    &__select {
+      padding-top: 18px;
+      padding-left: 10px;
+      padding-right: 30px;
+      padding-bottom: 18px;
+      width: 100%;
+      appearance: none;
+      background-color: #eee;
+      border: 1px solid #48b;
+      color: #4488bb;
+      font-size: 16px;
+      border-radius: 3px;
+    }
+    &__clean {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      &:after,
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        content: '';
+        width: 15px;
+        height: 2px;
+        transform: rotate(-45deg);
+        background-color: #48b;
+      }
+      &:after {
+        margin-right: 15px;
+        transform: rotate(45deg);
+      }
+      &:active {
+        &:before,
+        &:after {
+          background-color: color(#48b blackness(+20%));
+        }
+      }
+    }
+    &__select {
+      border: none;
+      color: #aaa;
+      cursor: pointer;
+    }
+    &__text {
+      position: absolute;
+      top: 3px;
+      left: 10px;
+      font-size: 10px;
+    }
+    &.country {
+      margin-bottom: 15px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 13px;
+        margin-top: -4.5px;
+        @util triangle(9px, #aaa, down);
+        cursor: pointer;
+        pointer-events: none;
+      }
+    }
+    &__error {
+      display: none;
+      background-color: rgb(187, 68, 68);
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    }
+    &--error {
+      color: #b44;
+      .request-item {
+        &__input {
+          border-color: #b44;
+        }
+        &__clean {
+          &:after,
+          &:before {
+            background-color: #b44;
+          }
+        }
+        &__error {
+          position: absolute;
+          bottom: -55px;
+          left: 50%;
+          margin-left: -85px;
+          padding: 13px;
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 16px;
+          color: #fff;
+          z-index: 2;
+          &:before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            margin-left: -6px;
+            @util triangle(12px, #b44, up);
+          }
+        }
+      }
+    }
+  }
+}

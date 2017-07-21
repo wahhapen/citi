@@ -1,0 +1,40 @@
+@define-mixin ordered-item {
+  .ordered-item {
+    position: relative;
+    margin-left: 47px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #aaa;
+    font-size: 18px;
+    font-weight: bold;
+    color: #48b;
+    line-height: 1.2;
+    counter-increment: item;
+    cursor: pointer;
+    sup {
+      line-height: 2.3;
+    }
+    &:active {
+      color: color(#48b blackness(40%));
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: -45px;
+      margin-top: -17px;
+      content: counter(item);
+      height: 30px;
+      width: 30px;
+      background: #4488bb;
+      border-radius: 100%;
+      color: white;
+      font-size: 18px;
+      line-height: 1.7;
+      text-align: center;
+      display: inline-block;
+    }
+  }
+}

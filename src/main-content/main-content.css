@@ -1,5 +1,9 @@
+@import "../posts/posts";
+@import "../ordered/ordered";
+
 @define-mixin main-content {
   .content {
-    @mixin wrapper;
+    @mixin posts;
+    @mixin ordered;
   }
 }

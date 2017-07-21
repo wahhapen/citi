@@ -1,6 +1,27 @@
+@import "../request/request";
+
 @define-mixin header {
   .attic {
     @mixin wrapper;
-    display: block;
+    color: #fff;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background-image: url('../images/head-bg.jpg');
+    background-color: #93b7d0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &__title {
+      margin: 0;
+      padding-bottom: 30px;
+      border-bottom: 5px solid #fff;
+      color: #fff;
+      font-size: 32px;
+    }
+    &__p {
+      margin: 30px 0;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @mixin request;
   }
 }

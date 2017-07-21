@@ -1,0 +1,14 @@
+@define-mixin submit {
+  .submit {
+    padding: 9px 38px;
+    appearance: none;
+    border-radius: 3px;
+    border: none;
+    background-image: linear-gradient(to bottom, #4488bb, #2e5d82);
+    color: #fff;
+    cursor: pointer;
+    &:active {
+      background-image: linear-gradient(to bottom, #3a75a0, #4283b4);
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import "../request-item/request-item";
+@import "../request-terms/request-terms";
+@import "../submit/submit";
+@import "../link/link";
+
+@define-mixin request {
+  .request {
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    max-width: 290px;
+    margin: 0 auto;
+    background-color: #fff;
+    color: #48b;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    &__title {
+      margin: 0;
+    }
+    &-item {
+      margin-top: 15px;
+    }
+    &-link {
+      margin-left: 20px;
+    }
+    @mixin request-item;
+    @mixin request-terms;
+    @mixin submit;
+    @mixin link;
+  }
+}
