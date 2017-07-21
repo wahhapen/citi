@@ -26,16 +26,13 @@ var validateForm = function validateForm(e) {
   e.preventDefault();
   if (mailInput.value.match(regMail)) {
     if (nameInput.value.match(regName)) {
-      alert('nice');
-      // requestForm.submit();
+      requestForm.submit();
     } else {
       requestName.classList.add('request-item--error');
     }
   } else {
     requestMail.classList.add('request-item--error');
-    if (nameInput.value.match(regName)) {
-      alert('not nice');
-    } else {
+    if (nameInput.value.match(regName)) {} else {
       requestName.classList.add('request-item--error');
     }
   }
@@ -70,4 +67,26 @@ request.addEventListener('change', checkDisable);
 
 Array.prototype.forEach.call(cleanFields, function (cleanField) {
   return cleanField.addEventListener('click', clearField);
+});
+
+var orderedItems = document.querySelectorAll('.ordered-item');
+var modalCancel = document.querySelector('.modal__cancel');
+var modalClose = document.querySelector('.modal__close');
+var body = document.querySelector('body');
+var overlay = document.querySelector('.overlay');
+
+var closeModal = function closeModal() {
+  body.classList.remove('disable-scroll');
+  overlay.classList.remove('shown');
+};
+
+var openModal = function openModal() {
+  body.classList.add('disable-scroll');
+  overlay.classList.add('shown');
+};
+
+modalClose.addEventListener('click', closeModal);
+modalCancel.addEventListener('click', closeModal);
+Array.prototype.forEach.call(orderedItems, function (orderedItem) {
+  return orderedItem.addEventListener('click', openModal);
 });

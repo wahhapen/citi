@@ -24,15 +24,13 @@ const validateForm = e => {
   e.preventDefault();
   if (mailInput.value.match(regMail)) {
     if (nameInput.value.match(regName)) {
-      alert('nice');
-      // requestForm.submit();
+      requestForm.submit();
     } else {
       requestName.classList.add('request-item--error');
     }
   } else {
     requestMail.classList.add('request-item--error');
     if (nameInput.value.match(regName)) {
-      alert('not nice');
     } else {
       requestName.classList.add('request-item--error');
     }
@@ -73,4 +71,26 @@ request.addEventListener('change', checkDisable);
 
 Array.prototype.forEach.call(cleanFields, cleanField =>
   cleanField.addEventListener('click', clearField)
+);
+
+const orderedItems = document.querySelectorAll('.ordered-item');
+const modalCancel = document.querySelector('.modal__cancel');
+const modalClose = document.querySelector('.modal__close');
+const body = document.querySelector('body');
+const overlay = document.querySelector('.overlay');
+
+const closeModal = () => {
+  body.classList.remove('disable-scroll');
+  overlay.classList.remove('shown');
+};
+
+const openModal = () => {
+  body.classList.add('disable-scroll');
+  overlay.classList.add('shown');
+};
+
+modalClose.addEventListener('click', closeModal);
+modalCancel.addEventListener('click', closeModal);
+Array.prototype.forEach.call(orderedItems, orderedItem =>
+  orderedItem.addEventListener('click', openModal)
 );
