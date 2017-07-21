@@ -12,7 +12,8 @@ const postcss = require('gulp-postcss'),
   browserSync = require('browser-sync'),
   fs = require('fs'),
   reload = browserSync.reload,
-  watch = require('gulp-watch');
+  watch = require('gulp-watch'),
+  babel = require('gulp-babel');
 
 // Builds css from source
 gulp.task('css', function() {
@@ -28,13 +29,25 @@ gulp.task('css', function() {
 });
 
 // Serve in browsers
-gulp.task('serve', ['css'], function() {
+gulp.task('serve', ['css'], () => {
   browserSync.init({
     server: './',
     reloadDelay: 300
   });
   gulp.watch('src/**/*.css', ['css']).on('change', reload);
+  gulp.watch('js/**/*.js', ['js']).on('change', reload);
   gulp.watch('**/*.html').on('change', reload);
+});
+
+gulp.task('js', () => {
+  return gulp
+    .src('./js/index.js')
+    .pipe(
+      babel({
+        presets: ['es2015']
+      })
+    )
+    .pipe(gulp.dest('./scripts'));
 });
 
 // Favicon
@@ -141,7 +154,7 @@ gulp.task('check-for-favicon-update', function(done) {
 
 //default task
 gulp.task('default', function(callback) {
-  runSequence('css', callback);
+  runSequence('css', 'js', callback);
 });
 //Watch tasks
 gulp.task('watch', function() {

@@ -7,6 +7,9 @@
     background-image: linear-gradient(to bottom, #4488bb, #2e5d82);
     color: #fff;
     cursor: pointer;
+    &:disabled {
+      background-image: linear-gradient(to bottom, gray(200), gray(140));
+    }
     &:active {
       background-image: linear-gradient(to bottom, #3a75a0, #4283b4);
     }
