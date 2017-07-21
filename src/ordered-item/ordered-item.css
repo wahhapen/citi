@@ -36,5 +36,8 @@
       text-align: center;
       display: inline-block;
     }
+    @media (--desktop) {
+      display: table;
+    }
   }
 }

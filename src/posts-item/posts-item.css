@@ -2,13 +2,17 @@
   .posts-item {
     position: absolute;
     margin-bottom: 20px;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    padding-right: 14px;
     position: relative;
-    background-color: rgba(68, 136, 187, 0.749);
     color: #fff;
+    background-size: cover;
+    overflow: hidden;
+    &__wrapper {
+      padding-top: 10px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      padding-right: 14px;
+      background-color: rgba(68, 136, 187, 0.749);
+    }
     &:last-of-type {
       margin-bottom: 0;
       &:after {
@@ -21,16 +25,6 @@
         background-color: #eee;
         z-index: -2;
       }
-    }
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background-size: cover;
     }
     &__title {
       margin: 0;
@@ -48,20 +42,56 @@
       width: 18px;
       background-image: url('../images/open.png');
     }
-    &:nth-of-type(1):before {
+    &:nth-of-type(1) {
       background-image: url('../images/post-1.jpg');
     }
-    &:nth-of-type(2):before {
+    &:nth-of-type(2) {
       background-image: url('../images/post-2.jpg');
     }
-    &:nth-of-type(3):before {
+    &:nth-of-type(3) {
       background-image: url('../images/post-3.jpg');
     }
-    &:nth-of-type(4):before {
+    &:nth-of-type(4) {
       background-image: url('../images/post-4.jpg');
     }
-    &:nth-of-type(5):before {
+    &:nth-of-type(5) {
       background-image: url('../images/post-5.jpg');
+    }
+    @media (--desktop) {
+      margin-bottom: 25px;
+      flex-basis: calc(33%-10px);
+      &:hover {
+        .posts-item__wrapper {
+          transform: translateY(0);
+        }
+      }
+      &__wrapper {
+        transform: translateY(calc(100% - 40px));
+        transition: .4s all ease-out;
+      }
+      &:nth-of-type(1) {
+        max-width: 390px;
+        margin-right: 10px;
+      }
+      &:nth-of-type(2) {
+        max-width: 390px;
+        margin-right: 10px;
+      }
+      &:nth-of-type(3) {
+        max-width: 390px;
+      }
+      &:nth-of-type(4) {
+        max-width: 590px;
+        margin-right: 10px;
+        flex-basis: calc(50%-10px);
+      }
+      &:nth-of-type(5) {
+        max-width: 590px;
+        flex-basis: calc(50%-10px);
+        &:after {
+          content: normal;
+        }
+      }
     }
   }
 }
