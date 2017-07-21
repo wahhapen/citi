@@ -50,62 +50,62 @@ gulp.task('generate-favicon', function(done) {
   realFavicon.generateFavicon(
     {
       masterPicture: './images/master-favicon.png',
-      dest: 'favicon',
-      iconsPath: 'favicon',
+      dest: './favicon',
+      iconsPath: './favicon',
       design: {
-  			ios: {
-  				pictureAspect: 'backgroundAndMargin',
-  				backgroundColor: '#ffffff',
-  				margin: '14%',
-  				assets: {
-  					ios6AndPriorIcons: false,
-  					ios7AndLaterIcons: false,
-  					precomposedIcons: false,
-  					declareOnlyDefaultIcon: true
-  				}
-  			},
-  			desktopBrowser: {},
-  			windows: {
-  				pictureAspect: 'noChange',
-  				backgroundColor: '#2b5797',
-  				onConflict: 'override',
-  				assets: {
-  					windows80Ie10Tile: false,
-  					windows10Ie11EdgeTiles: {
-  						small: false,
-  						medium: true,
-  						big: false,
-  						rectangle: false
-  					}
-  				}
-  			},
-  			androidChrome: {
-  				pictureAspect: 'noChange',
-  				themeColor: '#ffffff',
-  				manifest: {
-  					display: 'standalone',
-  					orientation: 'notSet',
-  					onConflict: 'override',
-  					declared: true
-  				},
-  				assets: {
-  					legacyIcon: false,
-  					lowResolutionIcons: false
-  				}
-  			},
-  			safariPinnedTab: {
-  				pictureAspect: 'blackAndWhite',
-  				threshold: 57.03125,
-  				themeColor: '#5bbad5'
-  			}
-  		},
-  		settings: {
-  			compression: 2,
-  			scalingAlgorithm: 'NearestNeighbor',
-  			errorOnImageTooSmall: false
-  		},
-  		markupFile: FAVICON_DATA_FILE
-  	},
+        ios: {
+          pictureAspect: 'backgroundAndMargin',
+          backgroundColor: '#ffffff',
+          margin: '14%',
+          assets: {
+            ios6AndPriorIcons: false,
+            ios7AndLaterIcons: false,
+            precomposedIcons: false,
+            declareOnlyDefaultIcon: true
+          }
+        },
+        desktopBrowser: {},
+        windows: {
+          pictureAspect: 'noChange',
+          backgroundColor: '#2b5797',
+          onConflict: 'override',
+          assets: {
+            windows80Ie10Tile: false,
+            windows10Ie11EdgeTiles: {
+              small: false,
+              medium: true,
+              big: false,
+              rectangle: false
+            }
+          }
+        },
+        androidChrome: {
+          pictureAspect: 'noChange',
+          themeColor: '#ffffff',
+          manifest: {
+            display: 'standalone',
+            orientation: 'notSet',
+            onConflict: 'override',
+            declared: true
+          },
+          assets: {
+            legacyIcon: false,
+            lowResolutionIcons: false
+          }
+        },
+        safariPinnedTab: {
+          pictureAspect: 'blackAndWhite',
+          threshold: 57.03125,
+          themeColor: '#5bbad5'
+        }
+      },
+      settings: {
+        compression: 2,
+        scalingAlgorithm: 'NearestNeighbor',
+        errorOnImageTooSmall: false
+      },
+      markupFile: FAVICON_DATA_FILE
+    },
     function() {
       done();
     }

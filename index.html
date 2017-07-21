@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Citi test</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/manifest.json">
-  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/manifest.json">
+  <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./favicon/favicon.ico">
   <meta name="msapplication-TileColor" content="#2b5797">
   <meta name="msapplication-config" content="favicon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
@@ -26,14 +26,16 @@
         aliqua. Ut enim ad minim veniam, quis nostrud</p>
       <div class="request">
         <h2 class="request__title">Request form</h2>
-        <label for="email" class="request-item mail">
+        <label for="email" class="request-item mail request-item--error">
           <span class="request-item__text">Enter your E-Mail</span>
           <input id="email" type="text" class="request-item__input">
+          <span class="request-item__clean"></span>
           <span class="request-item__error">Enter correct E-mail</span>
         </label>
         <label for="name" class="request-item name">
           <span class="request-item__text">Enter your Name</span>
           <input id="name" type="text" class="request-item__input">
+          <span class="request-item__clean"></span>
           <span class="request-item__error">Enter correct Name</span>
         </label>
         <label for="country" class="request-item country">
@@ -47,10 +49,12 @@
         </label>
         <label for="terms" class="request-terms">
           <input id="terms" type="checkbox" class="request-terms__input">
-          <span class="request-terms__text">I agree<a href="#" class="request-terms__link">Terms & Conditions</a></span>
+          <span class="request-terms__text">I agree with <a href="#" class="request-terms__link">Terms & Conditions</a></span>
         </label>
-        <button class="request__submit" type="submit">Submit</button>
-        <a href="#" class="request__link">Hyperlink</a>
+        <div class="request__footer">
+          <button class="request-submit submit" type="submit">Submit</button>
+          <a href="#" class="request-link link">Hyperlink</a>
+        </div>
       </div>
     </header>
     <main class="content">
@@ -98,8 +102,8 @@
           </li>
         </ul>
       </section>
-      <h2 class="ordered__title">Title text</h2>
       <section class="ordered">
+        <h2 class="ordered__title">Title text</h2>
         <ol class="ordered__list">
           <li class="ordered-item">Duis aute irure dolor in reprehenderit<sup>1</sup> in voluptate velit</li>
           <li class="ordered-item">Ullamco laboris nisi ut aliquip ex ea commodo consequat </li>
@@ -117,6 +121,22 @@
         <li class="basement-item">Amet - Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
       </ol>
     </footer>
+  </div>
+  <div class="overlay">
+    <div class="modal">
+      <h5 class="modal__title">External link</h5>
+      <p class="modal__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis
+        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+        ab illo</p>
+      <div class="modal__btns">
+        <div class="modal__cancel link">Cancel</div>
+        <button class="modal__accept submit">Accept</button>
+      </div>
+      <div class="modal__close"></div>
+    </div>
   </div>
 </body>
 
