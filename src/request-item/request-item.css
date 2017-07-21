@@ -17,6 +17,9 @@
       color: #4488bb;
       font-size: 16px;
       border-radius: 3px;
+      &::-ms-clear {
+        display: none;
+      }
     }
     &__clean {
       position: absolute;
@@ -24,6 +27,7 @@
       right: 10px;
       width: 25px;
       height: 25px;
+      visibility: hidden;
       cursor: pointer;
       &:after,
       &:before {
@@ -51,6 +55,9 @@
       border: none;
       color: #aaa;
       cursor: pointer;
+      &::-ms-expand {
+        display: none;
+      }
     }
     &__text {
       position: absolute;
@@ -109,6 +116,9 @@
           }
         }
       }
+    }
+    &--show-clean .request-item__clean {
+      visibility: visible;
     }
   }
 }

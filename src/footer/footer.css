@@ -28,5 +28,9 @@
         font-size: 12px;
       }
     }
+    @media (--desktop) {
+      margin: 0 auto;
+      max-width: 1190px;
+    }
   }
 }

@@ -28,20 +28,21 @@
             magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
         </div>
         <div class="request">
-          <h2 class="request__title">Request form</h2>
-          <label for="email" class="request-item mail request-item--error">
+          <form id="requestForm" action="POST">
+            <h2 class="request__title">Request form</h2>
+            <label for="email" class="request-item mail">
             <span class="request-item__text">Enter your E-Mail</span>
             <input id="email" type="text" class="request-item__input">
             <span class="request-item__clean"></span>
             <span class="request-item__error">Enter correct E-mail</span>
           </label>
-          <label for="name" class="request-item name">
+            <label for="name" class="request-item name">
             <span class="request-item__text">Enter your Name</span>
             <input id="name" type="text" class="request-item__input">
             <span class="request-item__clean"></span>
             <span class="request-item__error">Enter correct Name</span>
           </label>
-          <label for="country" class="request-item country">
+            <label for="country" class="request-item country">
             <select id="country" type="text" class="request-item__select">
               <option value="" disabled selected hidden>Select your country</option>
               <option value="Russia">Russia</option>
@@ -50,14 +51,15 @@
             </select>
             <span class="request-item__error">Please choose country</span>
           </label>
-          <label for="terms" class="request-terms">
+            <label for="terms" class="request-terms">
             <input id="terms" type="checkbox" class="request-terms__input">
             <span class="request-terms__text">I agree with <a href="#" class="request-terms__link">Terms & Conditions</a></span>
           </label>
-          <div class="request__footer">
-            <button class="request-submit submit" type="submit" disabled>Submit</button>
-            <a href="#" class="request-link link">Hyperlink</a>
-          </div>
+            <div class="request__footer">
+              <button class="request-submit submit" type="submit" disabled>Submit</button>
+              <a href="#" class="request-link link">Hyperlink</a>
+            </div>
+          </form>
         </div>
       </div>
     </header>
