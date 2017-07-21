@@ -78,7 +78,12 @@ const modalCancel = document.querySelector('.modal__cancel');
 const modalClose = document.querySelector('.modal__close');
 const body = document.querySelector('body');
 const overlay = document.querySelector('.overlay');
+const modal = document.querySelector('.modal');
+const winHeight = window.innerHeight;
 
+const setModalTop = () => {
+  modal.style.top = `${(winHeight - modal.clientHeight) / 2}px`;
+};
 const closeModal = () => {
   body.classList.remove('disable-scroll');
   overlay.classList.remove('shown');
@@ -87,6 +92,10 @@ const closeModal = () => {
 const openModal = () => {
   body.classList.add('disable-scroll');
   overlay.classList.add('shown');
+  if (window.innerWidth <= 425) {
+    setModalTop();
+    window.addEventListener('resize', setModalTop);
+  }
 };
 
 modalClose.addEventListener('click', closeModal);
