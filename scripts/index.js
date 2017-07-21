@@ -74,7 +74,12 @@ var modalCancel = document.querySelector('.modal__cancel');
 var modalClose = document.querySelector('.modal__close');
 var body = document.querySelector('body');
 var overlay = document.querySelector('.overlay');
+var modal = document.querySelector('.modal');
+var winHeight = window.innerHeight;
 
+var setModalTop = function setModalTop() {
+  modal.style.top = (winHeight - modal.clientHeight) / 2 + 'px';
+};
 var closeModal = function closeModal() {
   body.classList.remove('disable-scroll');
   overlay.classList.remove('shown');
@@ -83,6 +88,10 @@ var closeModal = function closeModal() {
 var openModal = function openModal() {
   body.classList.add('disable-scroll');
   overlay.classList.add('shown');
+  if (window.innerWidth <= 425) {
+    setModalTop();
+    window.addEventListener('resize', setModalTop);
+  }
 };
 
 modalClose.addEventListener('click', closeModal);
